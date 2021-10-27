@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity() {
         handleDelay.postDelayed({
             pager.text = "onCreate"
         }, 1000)
-        Toast.makeText(applicationContext, "onCreate", Toast.LENGTH_SHORT).show()
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
@@ -54,7 +53,6 @@ class MainActivity : AppCompatActivity() {
         handleDelay.postDelayed({
             pager.text = "onStart"
         }, 1500)
-        Toast.makeText(applicationContext, "onStart", Toast.LENGTH_SHORT).show()
     }
 
     override fun onResume() {
@@ -62,30 +60,25 @@ class MainActivity : AppCompatActivity() {
         handleDelay.postDelayed({
             pager.text = "onResume"
         }, 1700)
-        Toast.makeText(baseContext, "onResume", Toast.LENGTH_LONG).show()
     }
 
     override fun onPause() {
         super.onPause()
         pager.text = "onPause"
-        Toast.makeText(baseContext, "onPause", Toast.LENGTH_LONG).show()
     }
 
     override fun onRestart() {
         super.onRestart()
         pager.text = "onRestart"
-        Toast.makeText(baseContext, "onRestart", Toast.LENGTH_LONG).show()
     }
 
     override fun onStop() {
         super.onStop()
         pager.text = "onStop"
-        Toast.makeText(baseContext, "onStop", Toast.LENGTH_LONG).show()
     }
 
     override fun onDestroy() {
         super.onDestroy()
         pager.text = "onDestroy"
-        Toast.makeText(baseContext, "onDestroy", Toast.LENGTH_LONG).show()
     }
 }
