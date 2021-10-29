@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     private lateinit var screen: TextView
@@ -15,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btn: Button
     private var landCount: Int = 0
     private var portraitCount:Int = 1
-    val handleDelay = Handler()
+    private val handleDelay = Handler()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,12 +27,13 @@ class MainActivity : AppCompatActivity() {
         screen.text = "Portrait is $portraitCount"
 
         btn.setOnClickListener {
-            startActivity(Intent(this, addRemoveFragment::class.java))
+            startActivity(Intent(this, AddRemoveFragment::class.java))
         }
 
         handleDelay.postDelayed({
             pager.text = "onCreate"
         }, 1000)
+
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
